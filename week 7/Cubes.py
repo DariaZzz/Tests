@@ -1,0 +1,16 @@
+inFile = open('input.txt', 'r', encoding='utf8')
+lines = inFile.readlines()
+set1 = set({})
+set2 = set({})
+numR = lines.pop(0)
+numR = str(numR).split()
+for i in range(int(numR[0])):
+    set1.add(int(lines[i]))
+for i in range(len(lines) - int(numR[1]), len(lines)):
+    set2.add(int(lines[i]))
+print(len(set1 & set2))
+print(*sorted(list(set1 & set2)))
+print(len(set1 - set2))
+print(*sorted(list(set1 - set2)))
+print(len(set2 - set1))
+print(*sorted(list(set2 - set1)))
